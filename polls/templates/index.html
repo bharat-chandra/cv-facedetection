@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Face detection demo</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class = "container">
+    <div class = "jumbotron">
+        <h1>Face Detection & OpenCv</h1>
+        <p class = "lead"> Try uploading an image to see if a face is detected </p>
+        <p> Face detection using <a href="https://docs.opencv.org/2.4/modules/objdetect/doc/cascade_classification.html" target="blank"> Cascade Classification </a> | Powered by Python, Django, OpenCV </p>
+        <p> Image size limit: 2 MB </p>
+        <p> By <a href="https://www.linkedin.com/in/bharat-chandra-b056a5182">Bharat chandra</a> - Dec , 2020 </p>
+        <header class="navbar">
+            <form action="{% url 'upload_pic' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p>
+                    <input id="id_image" type="file" class="" name="image">
+                </p>
+                <div style="text-align: center">
+                    <input type="submit" value="Submit" />
+                </div>
+            </form>
+        </header>
+    </div>
+</div>
+</body>
+</html>
